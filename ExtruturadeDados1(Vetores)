@@ -1,0 +1,67 @@
+#include <stdio.h>
+void ordenarVetor(int numeros[], int indice){
+    for (int i = 0; i <indice; i ++) {
+      for (int j = 0; j <indice - i - 1; j ++) {
+        if (numeros [j]> numeros[j + 1]) {
+          int aux = numeros[j];
+          numeros[j] = numeros[j+1];
+          numeros[j+1] = aux;
+        }
+  }
+}
+}
+void exibirElementos(int numeros[], int indice){
+    for(int i = 0; i < indice; i++)
+        printf("[%d] ", numeros[i]);
+    printf("\n");
+}
+void inserirElemento(int numeros[], int indice){
+    int valor;
+    printf("Informe o valor: ");
+    scanf("%d", &valor);
+    numeros[indice] = valor;
+    printf("Valor inserido com sucesso! \n");
+}
+void menu(){
+    int numeros[5];
+    int indiceDisp = 0;
+    while(1){
+        int opcao;
+        printf("Informe a opcao: \n");
+        printf("1 - Inserir elemento \n");    
+        printf("2 - Exibir elementos \n");
+        printf("3 - Sair\n");
+        printf("4 - Ordenar\n");
+        scanf("%d", &opcao);            
+        switch(opcao){
+            case 1:
+                if(indiceDisp < 5){    
+                    inserirElemento(numeros, indiceDisp);
+                    indiceDisp++;                                
+                } else
+                    printf("Vetor cheio!\n");
+                break;
+            case 2:
+                if(indiceDisp > 0)
+                    exibirElementos(numeros, indiceDisp);
+                else
+                    printf("Vetor sem elementos\n");                
+                break;    
+            case 3:
+                printf("Finalizando\n");
+                return;
+            case 4:
+                if(indiceDisp > 1)
+                    ordenarVetor(numeros, indiceDisp);
+                break;
+            default:
+                printf("Opcao invalida!\n");
+                break;
+        }
+    }
+}
+
+int main(){
+    menu();
+    printf("\nFinalmente sai\n");
+}
