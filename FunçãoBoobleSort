@@ -1,0 +1,65 @@
+
+//Função
+void ordenar(int n, int numeros[]){
+    int aux;
+    //Buble Sort    
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n - 1; j++) {
+            if (numeros[j] > numeros[j + 1]) {
+                aux          = numeros[j];
+                numeros[j]     = numeros[j + 1];
+                numeros[j + 1] = aux;
+            }
+        }
+    }
+}
+void preencherVetor(int tamanho, int numeros[]){
+    for(int i = 0; i < tamanho; i++){
+        printf("Informe o valor: \n");
+        scanf("%d", &numeros[i]);
+    }
+    printf("Vetor preenchido!");
+}
+void exibirVetor(int tamanho, int numeros[]){
+    printf("Exibindo vetor: \n");
+    for(int i = 0; i < tamanho; i++){
+        printf("[%d] ", numeros[i]);
+    }
+    printf("\n");
+}
+void menu(int n, int numeros[]){
+    int opcao;
+    do {
+        printf("Escolha a acao desejada: \n");
+        printf("1 - Exibir vetor \n");
+        printf("2 - Preencher vetor \n");
+        printf("3 - Ordenar vetor\n");
+        printf("4 - Sair\n");
+        scanf("%d", &opcao);
+        switch(opcao){
+            case 1:
+                exibirVetor(n, numeros);
+                break;
+            case 2:
+                preencherVetor(n, numeros);
+                break;
+            case 3:
+                ordenar(n, numeros);
+                break;
+            case 4:
+                printf("Encerrando.. \n");
+                break;
+            default:
+                printf("Valor invalido, tente novamente!\n");
+                break;
+        }
+    }while(opcao != 4);
+   
+   
+}
+int main(){        
+    int n = 10;
+    int numeros[n];
+    menu(n, numeros);
+    return 0;
+}
