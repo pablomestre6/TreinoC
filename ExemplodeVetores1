@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main(){
+    int numeros[4]; //0, 1, 2, 3
+    numeros[0] = 25;
+    numeros[1] = 2;
+    numeros[2] = 3;
+    numeros[3] = 5;
+   
+    printf("Posição 0: %d \n", numeros[0]);
+    printf("Posição 1: %d \n", numeros[1]);
+    printf("Posição 2: %d \n", numeros[2]);
+    printf("Posição 3: %d \n", numeros[3]);
+    return 0;
+}
