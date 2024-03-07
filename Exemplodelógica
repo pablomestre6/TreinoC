@@ -1,0 +1,41 @@
+#include<stdio.h>
+int main(){
+ float atividades[10];
+ int i;
+ struct {
+  int numero;
+  float valor;
+  char tipo;
+ } transacao;
+ // Inicializar o vetor
+ for (i=0; i < 10; i++){
+    atividades[i] = 0.0;
+ }
+
+ printf("\n\nDigite o código da atividade: ");
+ scanf("%d", &transacao.numero);
+ while (transacao.numero != -1) {
+   printf("\n\nDigite o Valor : ");
+   scanf("%f", &transacao.valor);
+   printf("\n\nDigite o tipo de transação (R ou D): ");
+   getchar(); // Limpar o teclado do Enter anterior
+   scanf("%c", &transacao.tipo);
+
+   if (transacao.tipo == 'R' || transacao.tipo == 'r') {
+      atividades[transacao.numero] = atividades[transacao.numero] + transacao.valor;
+   }
+   else {
+    if (transacao.tipo == 'D' || transacao.tipo == 'd') {
+      atividades[transacao.numero] = atividades[transacao.numero] - transacao.valor;
+    }
+    else {
+      printf("Tipo Inválido !!");
+    }
+   }
+   printf("\n\nDigite o código da atividade: ");
+   scanf("%d", &transacao.numero);
+ }
+ for (i=0; i < 10; i++){
+   printf("\nSaldo da atividade %d = %f",i, atividades[i]);
+ }
+}
