@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+  int idade;
+  printf("Digite uma idade ");
+  scanf("%d", &idade);
+
+  if (idade >+ 22) {
+    printf("Esse candidato pode concorrer");
+  } else {
+    printf("Esse candiato está inapto ");
+  }
+
+  return 0;
+}
