@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+
+struct aluno {
+  char nome[50];
+  int idade;
+  float notas[3];
+};
+
+struct Turno {
+  char nome[50];
+  char dias[2][50];
+};
+
+int main() {
+  struct aluno alunos[] = {{"Pablo José", 30, {10.0, 8.5, 9.0}},
+                           {"João Carlos", 25, {7.0, 9.0, 8.0}},
+                           {"Marcos Paulo", 40, {9.0, 7.5, 8.5}}};
+
+  int num_alunos = sizeof(alunos) / sizeof(struct aluno);
+
+  for (int i = 0; i < num_alunos; i++) {
+    printf("Nome: %s\n", alunos[i].nome);
+    printf("Idade: %d\n", alunos[i].idade);
+    printf("Notas: %.2f, %.2f, %.2f\n\n", alunos[i].notas[0],
+           alunos[i].notas[1], alunos[i].notas[2]);
+  }
+
+  struct Turno turnos[] = {{"Manhã",
+                            {"Segunda-feira", "Terça-feira", "Quarta-feira",
+                             "Quinta-feira", "Sexta-feira"}}};
+
+  int m = sizeof(turnos) / sizeof(struct Turno);
+  for (int i = 0; i < m; i++)
+    printf("Turno: %s\n", turnos[i].nome);
+
+  return 0;
+}
