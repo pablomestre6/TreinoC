@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void menu(){
+	printf("*****MENU*******\n");
+	printf("1 - Hello Wold\n");
+	printf("2 - Ola mundo\n");
+}
+
+
+void ingles(){
+	printf("Hello World\n");
+}
+void portugues(){
+	printf("Ola mundo\n");
+}
+
+int main(int argc, char *argv[]) {
+	int op;
+	while(1){
+		menu(); //chama a função menu
+		scanf("%d", &op);
+		switch(op){
+			case 1:
+				ingles();
+				break;
+				case 2:
+				 portugues();
+				 break;
+				 default:
+				  printf("Opção Invalida\n");	
+		}
+	}
+	
+	
+	return 0;
+}
