@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h> // Adicione esta linha
+
+int exponencial(int numero) {
+    int exp = (int)pow(numero, 2); // Corrija para converter o resultado para int
+    return exp; // Corrija "retur" para "return"
+}      
+
+int main(int argc, char *argv[]) {
+    int num;
+    printf("Digite um número\n");
+    scanf("%d", &num);
+    int resultado = exponencial(num); // Corrija "numero" para "num"
+    printf("%d ao quadrado é %d\n", num, resultado); // Corrija o printf para incluir o caractere '\n'
+    
+    return 0;
+}
